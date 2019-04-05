@@ -12,6 +12,7 @@ namespace MeteoApp
         public MeteoListPage()
         {
             InitializeComponent();
+
             BindingContext = new MeteoListViewModel();
         }
 
@@ -31,7 +32,7 @@ namespace MeteoApp
             {
                 Navigation.PushAsync(new MeteoItemPage()
                 {
-                    BindingContext = e.SelectedItem as Entry
+                    BindingContext = new MeteoItemViewModel(e.SelectedItem as Entry)
                 });
             }
         }
