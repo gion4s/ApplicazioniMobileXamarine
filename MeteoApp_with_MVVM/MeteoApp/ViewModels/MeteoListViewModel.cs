@@ -22,8 +22,14 @@ namespace MeteoApp
         public MeteoListViewModel()
         {
             Cities = new ObservableCollection<City>();
-
-            for (var i = 0; i < 10; i++)
+            var locazioneCorrente = new City
+            {
+                ID = 0,
+                Name = "CurrentLocation"
+            };
+            CityHolder.updateCityWithLatLon(locazioneCorrente);
+            Cities.Add(locazioneCorrente);
+            for (var i = 1; i < 10; i++)
             {
                 var e = new City
                 {
