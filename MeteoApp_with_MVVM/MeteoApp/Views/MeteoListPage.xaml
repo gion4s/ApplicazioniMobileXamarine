@@ -9,7 +9,7 @@
             </ToolbarItem.Icon>
         </ToolbarItem>
     </ContentPage.ToolbarItems>
-    <ListView x:Name="listView" Margin="20" ItemSelected="OnListItemSelected" ItemsSource="{Binding Entries}">
+    <ListView x:Name="listView" Margin="20" ItemSelected="OnListItemSelected" ItemsSource="{Binding Cities}">
         <ListView.ItemTemplate>
             <DataTemplate>
                 <ViewCell>

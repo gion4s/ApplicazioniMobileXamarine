@@ -32,7 +32,7 @@ namespace MeteoApp
             {
                 Navigation.PushAsync(new MeteoItemPage()
                 {
-                    BindingContext = new MeteoItemViewModel(e.SelectedItem as Entry)
+                    BindingContext = new MeteoItemViewModel(e.SelectedItem as City)
                 });
             }
         }

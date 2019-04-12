@@ -1,35 +1,37 @@
 ﻿using System;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
+using MeteoApp.Models;
 
 namespace MeteoApp
 {
     public class MeteoListViewModel : BaseViewModel
     {
-        ObservableCollection<Entry> _entries;
+        ObservableCollection<City> _cities;
 
-        public ObservableCollection<Entry> Entries
+        public ObservableCollection<City> Cities
         {
-            get { return _entries; }
+            get { return _cities; }
             set
             {
-                _entries = value;
+                _cities = value;
                 OnPropertyChanged();
             }
         }
 
         public MeteoListViewModel()
         {
-            Entries = new ObservableCollection<Entry>();
+            Cities = new ObservableCollection<City>();
 
             for (var i = 0; i < 10; i++)
             {
-                var e = new Entry
+                var e = new City
                 {
                     ID = i,
-                    Name = "Entry " + i
+                    Name = "Milano"
                 };
-
-                Entries.Add(e);
+                CityHolder.updateCityWithName(e);
+                Cities.Add(e);
             }
         }
     }

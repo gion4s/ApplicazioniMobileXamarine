@@ -1,24 +1,26 @@
 ﻿using System;
+using MeteoApp.Models;
+using System.Diagnostics;
 
 namespace MeteoApp
 {
     public class MeteoItemViewModel : BaseViewModel
     {
-        Entry _entry;
+        City _city;
 
-        public Entry Entry
+        public City City
         {
-            get { return _entry;  }
+            get { return _city;  }
             set
             {
-                _entry = value;
+                _city = value;
                 OnPropertyChanged();
             }
         }
 
-        public MeteoItemViewModel(Entry entry)
+        public MeteoItemViewModel(City city)
         {
-            Entry = entry;
+            City = city;
         }
     }
 }
