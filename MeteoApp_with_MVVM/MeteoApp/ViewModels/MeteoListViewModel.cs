@@ -22,27 +22,44 @@ namespace MeteoApp
         public MeteoListViewModel()
         {
             Cities = new ObservableCollection<City>();
+            var locazioneCorrente = new City
+            {
+                ID = 0,
+                Name = "CurrentLocation"
+            };
 
-            for (var i = 0; i < 10; i++)
+            AddAsyncLatLon(locazioneCorrente);
+
+            for (var i = 1; i < 10; i++)
             {
                 var e = new City
                 {
                     ID = i,
                     Name = "Milano"
                 };
-                CityHolder.updateCityWithName(e);
-                Cities.Add(e);
+                AddAsyncName(e);
             }
         }
 
-        public void addCityToList(String city) {
+
+        public void addCityToList(String city)
+        {
             var c = new City
             {
                 ID = 15,
                 Name = city
             };
-            CityHolder.updateCityWithName(c);
-            Cities.Add(c);
+            AddAsyncName(c);
+        }
+        public async void AddAsyncLatLon(City locazioneCorrente)
+        {
+            await CityHolder.updateCityWithLatLon(locazioneCorrente);
+            Cities.Insert(0, locazioneCorrente);
+        }
+        public async void AddAsyncName(City city)
+        {
+            await CityHolder.updateCityWithName(city);
+            Cities.Add(city);
         }
     }
 }
