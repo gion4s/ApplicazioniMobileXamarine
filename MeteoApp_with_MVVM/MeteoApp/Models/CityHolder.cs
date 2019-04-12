@@ -19,7 +19,7 @@ namespace MeteoApp.Models
 
 
 
-        public static async void updateCityWithName(City c)
+        public static async Task updateCityWithName(City c)
         {
             string url = "https://api.openweathermap.org/data/2.5/weather?q=" + c.Name + "&units=metric&appid=" + APIKEY;
 
@@ -51,13 +51,9 @@ namespace MeteoApp.Models
                 Debug.WriteLine("City: " + c.Name);
 
             }
-
-            // Use one of the following lines
-
-            await Task.Delay(1);
         }
 
-        public static async void updateCityWithLatLon(City c)
+        public static async Task updateCityWithLatLon(City c)
         {
             var locator = CrossGeolocator.Current; // singleton
             var position = await locator.GetPositionAsync(TimeSpan.FromSeconds(10));
@@ -101,10 +97,6 @@ namespace MeteoApp.Models
                 Debug.WriteLine("City: " + c.Name);
 
             }
-
-            // Use one of the following lines
-
-            await Task.Delay(1);
         }
     }
 }

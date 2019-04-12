@@ -27,8 +27,9 @@ namespace MeteoApp
                 ID = 0,
                 Name = "CurrentLocation"
             };
-            CityHolder.updateCityWithLatLon(locazioneCorrente);
-            Cities.Add(locazioneCorrente);
+
+            AddAsyncLatLon(locazioneCorrente);
+
             for (var i = 1; i < 10; i++)
             {
                 var e = new City
@@ -36,9 +37,19 @@ namespace MeteoApp
                     ID = i,
                     Name = "Milano"
                 };
-                CityHolder.updateCityWithName(e);
-                Cities.Add(e);
+                AddAsyncName(e);
             }
+        }
+
+        public async void AddAsyncLatLon(City locazioneCorrente)
+        {
+            await CityHolder.updateCityWithLatLon(locazioneCorrente);
+            Cities.Insert(0, locazioneCorrente);
+        }
+        public async void AddAsyncName(City city)
+        {
+            await CityHolder.updateCityWithName(city);
+            Cities.Add(city);
         }
     }
 }
