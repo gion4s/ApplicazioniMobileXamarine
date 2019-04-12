@@ -15,11 +15,8 @@
                 HorizontalOptions="Center" 
                 VerticalOptions="Start" />
             
-            <!-- immagine embedded: {local:ImageResource FormsLayoutTester.iOS.Resources.supsi.png -->
-            <!-- immagine locale:   supsi2.png -->
-            <!-- immagine download: http://www.supsi.ch/home/dms/supsi/img/loghi/logo_SUPSI.gif -->
             <Image x:Name="MainImage" 
-                Source="supsi2.png"
+                Source="clearsky.png"
                 BackgroundColor="Blue"
                 VerticalOptions="FillAndExpand" />
             

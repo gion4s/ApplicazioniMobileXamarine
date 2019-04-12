@@ -3,17 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Acr.UserDialogs;
 using Xamarin.Forms;
 
 namespace MeteoApp
 {
     public partial class MeteoListPage : ContentPage
     {
+        MeteoListViewModel MeteoListViewModel = new MeteoListViewModel();
+
         public MeteoListPage()
         {
             InitializeComponent();
 
-            BindingContext = new MeteoListViewModel();
+            BindingContext = MeteoListViewModel;
         }
 
         protected override void OnAppearing()
@@ -21,9 +24,20 @@ namespace MeteoApp
             base.OnAppearing();
         }
 
-        void OnItemAdded(object sender, EventArgs e)
+        async void OnItemAddedAsync(object sender, EventArgs e)
         {
-            DisplayAlert("Messaggio", "Testo", "OK");
+            PromptResult pResult = await UserDialogs.Instance.PromptAsync(new PromptConfig
+            {
+                InputType = InputType.Name,
+                OkText = "Add City",
+                Title = "New City",
+            });
+
+            if (pResult.Ok && !string.IsNullOrWhiteSpace(pResult.Text))
+            {
+                MeteoListViewModel.addCityToList(pResult.Text);
+            }
+
         }
 
         void OnListItemSelected(object sender, SelectedItemChangedEventArgs e)

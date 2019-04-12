@@ -34,5 +34,15 @@ namespace MeteoApp
                 Cities.Add(e);
             }
         }
+
+        public void addCityToList(String city) {
+            var c = new City
+            {
+                ID = 15,
+                Name = city
+            };
+            CityHolder.updateCityWithName(c);
+            Cities.Add(c);
+        }
     }
 }
