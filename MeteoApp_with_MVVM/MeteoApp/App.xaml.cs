@@ -13,8 +13,8 @@ namespace MeteoApp
 
             var nav = new NavigationPage(new MeteoListPage())
             {
-                BarBackgroundColor = Color.LightGreen,
-                BarTextColor = Color.White
+                BarBackgroundColor = Color.Azure,
+                BarTextColor = Color.Black
             };
 
             MainPage = nav;

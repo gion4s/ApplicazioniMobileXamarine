@@ -30,15 +30,15 @@ namespace MeteoApp
 
             AddAsyncLatLon(locazioneCorrente);
 
-            for (var i = 1; i < 10; i++)
-            {
-                var e = new City
-                {
-                    ID = i,
-                    Name = "Milano"
-                };
-                AddAsyncName(e);
-            }
+            //for (var i = 1; i < 10; i++)
+            //{
+            //    var e = new City
+            //    {
+            //        ID = i,
+            //        Name = "Milano"
+            //    };
+            //    AddAsyncName(e);
+            //}
         }
 
 
