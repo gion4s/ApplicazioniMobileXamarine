@@ -9,8 +9,8 @@
                     Android="0, 10, 0, 100" />
             </StackLayout.Margin>
             
-            <!--Text="{Binding City.Name}"-->
-            <Label Text="Lugano" 
+            <!---->
+            <Label Text="{Binding City.Name}"
                 FontSize="55"
                 HorizontalOptions="Center" 
                 VerticalOptions="Start" />

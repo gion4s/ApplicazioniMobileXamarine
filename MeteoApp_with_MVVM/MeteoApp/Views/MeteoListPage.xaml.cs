@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,7 +24,13 @@ namespace MeteoApp
 
         void OnItemAdded(object sender, EventArgs e)
         {
-            DisplayAlert("Messaggio", "Testo", "OK");
+            OnAlertYesNoClicked(sender, e);
+        }
+
+        async void OnAlertYesNoClicked(object sender, EventArgs e)
+        {
+            bool answer = await DisplayAlert("Question?", "Would you like to play a game", "Yes", "No");
+            Debug.WriteLine("Answer: " + answer);
         }
 
         void OnListItemSelected(object sender, SelectedItemChangedEventArgs e)
