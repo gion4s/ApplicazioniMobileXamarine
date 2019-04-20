@@ -16,11 +16,10 @@
                 VerticalOptions="Start" />
             
             <Image x:Name="MainImage" 
-                Source="clearsky.png"
-                BackgroundColor="Blue"
+                Source = "thunderstorm.png"
                 VerticalOptions="FillAndExpand" />
             
-            <Label Text="Tipo Meteo"
+            <Label Text="Clear Sky"
                  FontSize="35"
                  VerticalOptions="Start"
                  HorizontalOptions="Center" />

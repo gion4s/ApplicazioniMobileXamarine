@@ -169,6 +169,15 @@
       <Version>7.0.4</Version>
     </PackageReference>
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\clearsky.png" />
+    <Content Include="Resources\mist.png" />
+    <Content Include="Resources\scatteredclouds.png" />
+    <Content Include="Resources\rain.png" />
+    <Content Include="Resources\snow.png" />
+    <Content Include="Resources\snowerrain.png" />
+    <Content Include="Resources\thunderstorm.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\MeteoApp\MeteoApp.projitems" Label="Shared" />
 </Project>
