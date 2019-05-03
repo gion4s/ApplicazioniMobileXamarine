@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "459506153085",
+    "firebase_url": "https://fir-projcet-fd666.firebaseio.com",
+    "project_id": "fir-projcet-fd666",
+    "storage_bucket": "fir-projcet-fd666.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:459506153085:android:0d82ffda2b5c9f7f",
+        "android_client_info": {
+          "package_name": "ch.supsi.dti.isin.galliva.meteoapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "459506153085-bb5g8uug44dmij4g2uf3t8al9o4i1cu1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB8hh_6cy3RSUMVdgY_grWuwWj9UzT5kI0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "459506153085-bb5g8uug44dmij4g2uf3t8al9o4i1cu1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
