@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using MeteoApp.Models;
@@ -39,8 +40,14 @@ namespace MeteoApp
             //    };
             //    AddAsyncName(e);
             //}
-        }
 
+            List<City> db_cities = App.Database.GetItemsAsync().Result;
+
+            foreach (City c in db_cities)
+            {
+                AddAsyncName(c);
+            }
+        }
 
         public void addCityToList(String city)
         {
@@ -50,12 +57,15 @@ namespace MeteoApp
                 Name = city
             };
             AddAsyncName(c);
+            App.Database.SaveItemAsync(c);
         }
+
         public async void AddAsyncLatLon(City locazioneCorrente)
         {
             await CityHolder.updateCityWithLatLon(locazioneCorrente);
             Cities.Insert(0, locazioneCorrente);
         }
+
         public async void AddAsyncName(City city)
         {
             await CityHolder.updateCityWithName(city);

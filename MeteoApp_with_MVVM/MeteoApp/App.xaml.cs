@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MeteoApp.Models;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -7,13 +8,25 @@ namespace MeteoApp
 {
     public partial class App : Application
     {
+        static CityDatabase database;
+
+        public static CityDatabase Database
+        {
+            get
+            {
+                if (database == null) // se l'istanza è nulla, la creo
+                    database = new CityDatabase();
+                return database; // ritorno l'istanza
+            }
+        }
+
         public App()
         {
             InitializeComponent();
 
             var nav = new NavigationPage(new MeteoListPage())
             {
-                BarBackgroundColor = Color.Azure,
+                BarBackgroundColor = Color.Red,
                 BarTextColor = Color.Black
             };
 
